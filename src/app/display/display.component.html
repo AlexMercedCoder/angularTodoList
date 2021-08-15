@@ -1,0 +1,11 @@
+<a routerLink="/create">
+  <button>CREATE TODO</button>
+</a>
+
+<ul>
+  <li *ngFor="let todo of todoService.todos; index as i;">
+    <h1 (click)="selectTodo(todo)">{{todo.reminder}}</h1>
+    <h2>{{todo.completed}}</h2>
+    <button (click)="todoService.deleteTodo(todo)">Delete</button>
+  </li>
+</ul>
